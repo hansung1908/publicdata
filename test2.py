@@ -1,11 +1,7 @@
-import json
-import urllib.request
+import requests
 
-key = "서비스 키 입력"
+api_key = "서비스키"
+url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey={}&numOfRows=10&pageNo=1&base_date=20231006&base_time=0600&nx=55&ny=127'.format(api_key)
 
-url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey=" + key + "&dataType=JSON&areaNo=1100000000&time=2021111818"
-json_page = urllib.request.urlopen(url)
-json_data = json_page.read().decode("utf-8")
-json_array = json.loads(json_data)
-
-print(json_array)
+response = requests.get(url)
+print(response.content)
