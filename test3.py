@@ -3,7 +3,7 @@ import openpyxl
 import pandas as pd
 
 api_key = "서비스키"
-url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey={}&numOfRows=10&pageNo=1&base_date=20231007&base_time=0600&nx=55&ny=127'.format(api_key)
+url = 'http://apis.data.go.kr/1360000/AsosHourlyInfoService/getWthrDataList?serviceKey={}&numOfRows=24&pageNo=1&dataCd=ASOS&dateCd=HR&stnIds=108&endDt=20231007&endHh=01&startHh=01&startDt=20231006'.format(api_key)
 
 content = requests.get(url).content
 dict = xmltodict.parse(content)
