@@ -2,8 +2,8 @@ import requests, xmltodict, json
 import openpyxl
 import pandas as pd
 
-api_key = "서비스키"
-url = 'http://apis.data.go.kr/1360000/AsosHourlyInfoService/getWthrDataList?serviceKey={}&numOfRows=24&pageNo=1&dataCd=ASOS&dateCd=HR&stnIds=108&endDt=20231007&endHh=01&startHh=01&startDt=20231006'.format(api_key)
+api_key = "1%2FCFOLYKPhbqr5KCMfu2IA4Zl25N6B7KedYBRbxuh3AbeigZpcJtFG3pdO9DUDgohN8Qe2L%2BdHjidB1dwABAaQ%3D%3D"
+url = 'http://apis.data.go.kr/1360000/AsosDalyInfoService/getWthrDataList?serviceKey={}&numOfRows=10&pageNo=1&dataCd=ASOS&dateCd=DAY&startDt=20231001&endDt=20231008&stnIds=108'.format(api_key)
 
 content = requests.get(url).content
 dict = xmltodict.parse(content)
